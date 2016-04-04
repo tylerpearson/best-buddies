@@ -25,5 +25,7 @@ The database is Postgres and has close to 4gb's of data in it now. When I was ru
 
 Caching is done with MemCachier. Images are stored on S3 and Cloudfront is used as a CDN for assets. Phusion Passenger with Nginx was used as the web app server. Raygun and New Relic were used for monitoring errors and the servers.
 
+It's a microsite and I put it together quickly, so it has some *really ugly code*, but I'm going to open source it anyway.
+
 ![Screenshot](http://i.imgur.com/F9JHzsx.png)
 
