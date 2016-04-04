@@ -6,6 +6,8 @@
 
 Best Buddies is a microsite to find which of your friends likes your photos the most on Instagram. [Since launch](https://www.producthunt.com/tech/best-buddies), it's [been used by over](https://twitter.com/TylerPearson/status/710349828295790593) 20,000 people and analyzed 30 million likes by 6.6 million different accounts on Instagram. 
 
+**Note:** It's a microsite and I put it together quickly, so it has some *really ugly code*, but I'm going to open source it anyway in case anyone finds it interesting.
+
 ## Launch
 
 [Within a day of launching](https://www.dropbox.com/s/sknu4ov8h5vrdno/IMG_5817%202.PNG?dl=0), Best Buddies was featured on the home page of [Product Hunt](https://www.producthunt.com/tech/best-buddies) and [stayed on the popular page](https://www.dropbox.com/s/0im0lsx7oje9pi0/IMG_5835%202.PNG?dl=0) for close to a week. Best Buddies was also written about in numerous other places, like Business Insider, [where it was listed on the home page](https://www.dropbox.com/s/bbq1c6la2r6a4y3/IMG_5824.PNG?dl=0). It was also shared extensively on social media sites. Not a bad launch!
@@ -24,8 +26,6 @@ At one point right after launch, there were 12 web servers and 80 background ser
 The database is Postgres and has close to 4gb's of data in it now. When I was running a bunch of servers, I was able to easily bump to a larger database server with Heroku's amazing setup to handle more simultaneous database connections. 
 
 Caching is done with MemCachier. Images are stored on S3 and Cloudfront is used as a CDN for assets. Phusion Passenger with Nginx was used as the web app server. Raygun and New Relic were used for monitoring errors and the servers.
-
-It's a microsite and I put it together quickly, so it has some *really ugly code*, but I'm going to open source it anyway in case anyone finds it interesting.
 
 ![Screenshot](http://i.imgur.com/F9JHzsx.png)
 
