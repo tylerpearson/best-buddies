@@ -1,0 +1,45 @@
+<% provide(:title, "The top friends for @#{@results_user.username} on Instagram!") %>
+
+<% provide(:og_tags) do %>
+  <meta property="og:title" content="Check out who <%= "@#{@results_user.username}'s" %> top friends are on Instagram!">
+  <meta property="og:image" content="<%= @results_user.share_image.url(:thumb) %>">
+  <meta property="og:site_name" content="BestBuddies">
+  <meta property="og:description" content="Find out which of your friends like your photos the most on Instagram. Built by Sweeble, a beautifully simple way to spend time with people's photos and videos.">
+  <meta property="og:url" content="https://bestbuddies.sweebleapp.com/results/<%= @results_user.username %>">
+  <meta property="fb:admins" content="25817727,25827335,25831332,100000606987196">
+
+  <!-- Twitter -->
+  <meta name="twitter:title" content="Check out who <%= "@#{@results_user.username}'s" %> top friends are on Instagram!">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@SweebleApp">
+  <meta name="twitter:description" content="Find out which of your friends like your photos the most on Instagram. Built by Sweeble, a beautifully simple way to spend time with people's photos and videos.">
+  <meta name="twitter:image" content="<%= @results_user.share_image.url(:thumb) %>">
+  <meta name="twitter:url" content="https://bestbuddies.sweebleapp.com/results/<%= @results_user.username %>">
+  <meta property="twitter:account_id" content="4503599630993522" />
+
+  <meta name="description" content="Find out which of your friends like your photos the most on Instagram. Built by Sweeble, a beautifully simple way to spend time with people's photos and videos.">
+<% end %>
+
+<div class="container-left">
+    <%= render "analyzer/results", username: @results_user.username, results: @results, limit: 10, verified: @verified %>
+</div>
+<div class="container-right">
+    <% if @same_user %>
+        <div class="finished-wrap">
+            <h2>Hey @<%= @user.username %>! Here are your results.</h2>
+
+            <div class="share-prompt">
+                <hr>
+
+                <%= link_to "Share on Twitter!", "https://twitter.com/intent/tweet?text=Oh snap! Look who @#{@results_user.username}'s top friends are on Instagram #{URI::escape(current_url)}&via=sweebleapp", class: "btn btn-share btn-share-twitter" %>
+
+                <%= link_to "Share on Facebook!", "https://www.facebook.com/dialog/share?app_id=772975046144208&display=popup&href=#{URI::escape(current_url)}&redirect_uri=#{URI::escape(current_url)}", class: "btn btn-share btn-share-facebook" %>
+
+                <%= link_to "Share on Instagram!", results_image_path(@results_user.username), class: "btn btn-share btn-share-instagram", target: "_blank" %>
+            </div>
+
+        </div>
+    <% else %>
+        <%= render "shared/intro" %>
+    <% end %>
+</div>

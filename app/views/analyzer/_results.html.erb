@@ -1,0 +1,39 @@
+<% if !@same_user %>
+    <div class="results-banner">
+        <p>@<%= username %> is sharing who likes their photos the most on Instagram!</p>
+    </div>
+<% end %>
+
+<% if @same_user && user_signed_in? && current_user.popular? %>
+    <div class="popular-user-banner">
+        <p>You're popular! It looks like some of your photos have over 100 likes. Unfortunately due to Instagram API restrictions, we can only give an estimate of your top friends. :(</p>
+    </div>
+<% end %>
+
+<div class="results">
+
+    <h2 class="results-headline">
+        <%= image_tag('heart-2.svg', height: 20, width: 20, alt: "heart") %>
+        @<%= username %>'s top likers on Instagram!
+    </h2>
+
+    <div class="results-wrap">
+
+        <table class="table-results">
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>User</th>
+                    <th>Percent Liked</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% cache "#{username}_friend_results" do %>
+                    <% results.limit(limit).each_with_index do |result, index| %>
+                        <%= result_row(result, index).html_safe %>
+                    <% end %>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>

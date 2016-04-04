@@ -1,0 +1,81 @@
+<% provide(:title, "Find your top friends on Instagram") %>
+
+<div class="container-left">
+    <%= render "shared/intro" %>
+</div>
+<div class="container-right">
+    <div class="results">
+        <h2 class="results-headline">
+            <%= image_tag('heart-2.svg', height: 20, alt: "heart") %>
+            @joebob's top likers on Instagram!
+        </h2>
+        <div class="results-wrap">
+            <table class="table-results">
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>User</th>
+                        <th>Percent Liked</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>1. </td>
+                            <td class="table-info">
+                              <%= image_tag("avatars/2.jpg", width: 32, height: 32, class: "avatar", alt: "avatar") %><p class="username"><span>Tyler Pearson (</span>@typearson<span>)</span></p></td><td class="table-stats">97%
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2. </td>
+                            <td class="table-info"><%= image_tag("avatars/1.jpg", width: 32, height: 32, class: "avatar", alt: "avatar") %>
+                                <p class="username"><span>Nicole Jensen (</span>@nicole<span>)</span></p>
+                            </td>
+                            <td class="table-stats">95%</td>
+                        </tr>
+                        <tr>
+                            <td>3. </td>
+                            <td class="table-info"><%= image_tag("avatars/3.jpg", width: 32, height: 32, class: "avatar", alt: "avatar") %>
+                                <p class="username"><span>Valerie Martinez (</span>@martineziscool<span>)</span></p>
+                            </td>
+                            <td class="table-stats">94%</td>
+                        </tr>
+                        <tr>
+                            <td>4. </td>
+                            <td class="table-info"><%= image_tag("avatars/6.jpg", width: 32, height: 32, class: "avatar", alt: "avatar") %>
+                                <p class="username"><span>Cory Rose (</span>@rose<span>)</span></p>
+                            </td>
+                            <td class="table-stats">90%</td>
+                        </tr>
+                        <tr>
+                            <td>5. </td>
+                            <td class="table-info"><%= image_tag("avatars/10.jpg", width: 32, height: 32, class: "avatar", alt: "avatar") %>
+                                <p class="username"><span>Brandie Washington (</span>@brandie33<span>)</span></p>
+                            </td>
+                            <td class="table-stats">87%</td>
+                        </tr>
+                        <tr>
+                            <td>6. </td>
+                            <td class="table-info"><%= image_tag("avatars/4.jpg", width: 32, height: 32, class: "avatar", alt: "avatar") %>
+                                <p class="username"><span>Priscilla Steward (</span>@priscillaNY<span>)</span></p>
+                            </td>
+                            <td class="table-stats">85%</td>
+                        </tr>
+                        <tr>
+                            <td>7. </td>
+                            <td class="table-info"><%= image_tag("avatars/7.jpg", width: 32, height: 32, class: "avatar", alt: "avatar") %>
+                              <p class="username"><span>Marsha Hale (</span>@maaarsha<span>)</span></p>
+                            </td>
+                            <td class="table-stats">82%</td>
+                        </tr>
+                        <tr>
+                            <td>8. </td>
+                            <td class="table-info"><%= image_tag("avatars/8.jpg", width: 32, height: 32, class: "avatar", alt: "avatar") %>
+                                <p class="username"><span>Jeanne Harrison (</span>@jeanneh<span>)</span></p>
+                            </td>
+                            <td class="table-stats">66%</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="intro">
+    <%= image_tag('heart-2.svg', width: 100, alt: "heart", class: "heart") %>
+    <h1 class="logo"><%= ApplicationHelper::SITE_TITLE %></h1>
+    <div class="content content-welcome">
+        <p>Find out who likes your photos the most on Instagram!</p>
+        <p>Built by <%= image_tag('sweeble-logo.svg', alt: "Sweeble logo", height: 14, width: 14, class: "content-logo") %><%= link_to "Sweeble", "https://www.sweebleapp.com", target: "_blank" %>, a new photo app that doesn't suck.</p>
+    </div>
+
+    <div class="start-wrapper">
+        <%= link_to "Get Started!", signin_path, class: "btn btn-start", data: { disable_with: "Woo..." } %>
+
+        <p class="start-disclaimer">We'll securely access your account briefly to analyze your photos.
+          <br>Nothing is autoposted.</p>
+    </div>
+
+    <%= render "shared/buttons" %>
+</div>

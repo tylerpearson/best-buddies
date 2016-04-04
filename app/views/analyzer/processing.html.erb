@@ -1,0 +1,20 @@
+<% provide(:title, "Processing @#{@user.username}") %>
+
+<div class="processing-content">
+
+    <p>Hey @<%= @user.username %>, hang tight! Your results are being calculated. When they are finished, you will be automatically redirected.</p>
+
+
+    <div class="visit-app">
+        <p>While you wait, <%= link_to "check out Sweeble", "https://www.sweebleapp.com", target: "_blank" %>! Sweeble is a beautifully simple way to spend time with people's photos and videos.</p>
+
+        <p>Available today on <%= link_to "iOS", "https://sweebleapp.com/ios" %> and <%= link_to "Android", "https://sweebleapp.com/android" %>.</p>
+    </div>
+
+    <div class="heart-wrap">
+        <%= link_to "https://www.sweebleapp.com", target: "_blank" do %>
+            <%= image_tag('heart-2.svg', width: 140, alt: "heart", class: "heart") %>
+        <% end %>
+    </div>
+</div>
+

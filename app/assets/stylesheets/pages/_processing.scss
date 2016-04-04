@@ -1,0 +1,39 @@
+.analyzer-processing {
+
+    .container {
+        max-width: 600px;
+        height: 100%;
+
+        @media (max-width: 620px) {
+            padding: 0 20px;
+            display: block;
+            padding-top: 60px;
+        }
+    }
+}
+
+.processing-content {
+    font-size: 16px;
+    margin-top: 70px;
+    p a {
+        border-bottom: solid 2px #fff;
+        &:hover {
+            border-bottom: none;
+        }
+    }
+    @media (max-width: 620px) {
+        font-size: 16px;
+        h1 {
+            font-size: 22px;
+        }
+    }
+}
+
+.visit-app {
+    font-size: 26px;
+}
+
+.heart-wrap {
+    text-align: center;
+    padding-top: 30px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <%= og_tags(yield(:og_tags)) %>
+  <%= canonical_tag -%>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58407730-2', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+  <%= favicon_link_tag %>
+
+  <% if user_signed_in? %>
+  <script>
+      window.userId = <%= current_user.id %>;
+  </script>
+  <% end %>
+
+</head>
+<body class="<%= body_class %>">
+
+<div class="container">
+    <%= yield %>
+</div>
+
+<%= render "shared/footer" %>
+
+<%= javascript_include_tag 'application' %>
+<div id="fb-root"></div>
+</body>
+</html>
